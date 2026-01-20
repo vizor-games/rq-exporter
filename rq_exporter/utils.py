@@ -117,7 +117,8 @@ def get_queue_jobs(connection, queue_name, queue_class=None):
         JobStatus.FINISHED: queue.finished_job_registry.get_job_count(cleanup=False),
         JobStatus.FAILED: queue.failed_job_registry.get_job_count(cleanup=False),
         JobStatus.DEFERRED: queue.deferred_job_registry.get_job_count(cleanup=False),
-        JobStatus.SCHEDULED: queue.scheduled_job_registry.get_job_count(cleanup=False)
+        JobStatus.SCHEDULED: queue.scheduled_job_registry.get_job_count(cleanup=False),
+        JobStatus.CANCELED: queue.canceled_job_registry.get_job_count(cleanup=False),
     }
 
 
